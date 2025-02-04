@@ -1,0 +1,485 @@
+﻿@font-face {
+    font-family: 'Trip';
+    src: url('../Font/TripGeom-Regular.ttf');
+}
+
+/* Global Styles */
+
+
+.suggestions {
+    border: 1px solid black;
+    background: #fff;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background: blue;
+}
+
+.suggestion-item {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+    .suggestion-item:hover {
+        background: #f0f0f0;
+    }
+
+.suggestions {
+    width: 165px;
+    margin-left: 150px;
+}
+
+
+.form-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* Left Section Styles */
+.left-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .box h2 {
+        margin-top: 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .box p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+/* Input Box Styles */
+.input-box {
+    position: relative;
+    margin: 10px 0;
+}
+
+.input-box-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+    .input-box-container .input-box {
+        flex: 1;
+    }
+
+.input-box .input-label {
+    position: absolute;
+    color: #80868b;
+    font-size: 16px;
+    font-weight: 400;
+    left: 8px;
+    top: 13px;
+    padding: 0 8px;
+    transition: 250ms;
+    user-select: none;
+    pointer-events: none;
+}
+
+.input-box .input-1 {
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    border-radius: 4px;
+    color: #202124;
+    border: 1px solid #dadce0;
+    padding: 13px 15px;
+    transition: 250ms;
+}
+
+    .input-box .input-1:focus {
+        outline: none;
+        border: 2px solid #1a73e8;
+        transition: 250ms;
+    }
+
+.input-box.focus .input-label {
+    color: #1a73e8;
+    top: -8px;
+    background: #fff;
+    font-size: 11px;
+}
+
+
+/*Trip Box*/
+body {
+    font-family: Arial, sans-serif;
+    font-family: 'Trip';
+    color: #333;
+}
+
+.trip-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Trip';
+}
+
+.trip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .trip-header h1 {
+        font-size: 24px;
+        font-weight: bolder;
+        color: #001f3f;
+    }
+
+.change-flight {
+    font-size: 14px;
+    color: #4a90e2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.flight-section {
+    margin-bottom: 20px;
+}
+
+.flight-type-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+.flight-type {
+    display: inline-block;
+    background-color: #0069d9;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+    .flight-type.return {
+        background-color: #28a745;
+    }
+
+.flight-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.date-duration {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.time-and-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 70px; /* Ensure consistent spacing */
+}
+
+.flight-time {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px; /* Add spacing between time, icon, and details */
+}
+
+.time {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.airplane-icon {
+    width: 20px;
+    height: 20px;
+    margin: 5px 0;
+    vertical-align: middle;
+}
+
+.location {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.flight-info {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+    .flight-info span {
+        margin-right: 10px;
+    }
+
+    .flight-info .airline {
+        font-family: 'Cursive', sans-serif;
+        color: #d9534f;
+    }
+
+.icon {
+    color: #007bff;
+}
+
+.airplane-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.separator {
+    width: 4px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 30px;
+}
+
+.seat-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.seat-info {
+    display: flex;
+    align-items: center; /* Aligns the icon and text vertically */
+    gap: 15px; /* Spacing between the icon and the text */
+}
+
+.seat-icon {
+    width: 40px; /* Adjust size of the seat icon */
+    height: 40px;
+}
+
+.seat-info h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #001f3f;
+}
+
+.seat-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.seat-button {
+    background: white;
+    color: #001f3f;
+    border: 1px solid #001f3f;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnPayment {
+    background: white;
+    color: #001f3f;
+    border: 1px solid #001f3f;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-items: center;
+    text-align: center;
+    margin-left: 35%;
+}
+
+    .btnPayment:hover {
+        background: #001f3f;
+        color: white;
+    }
+
+.seat-button:hover {
+    background: #001f3f;
+    color: white;
+}
+
+#seat-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#seating-layout, #selected-seat-box {
+    display: none;
+}
+
+#seating-layout {
+    display: grid; /* Use grid layout for rows and columns */
+    grid-template-columns: repeat(5, 50px); /* Adjust columns dynamically */
+    gap: 10px; /* Space between seats */
+    justify-content: center; /* Center align the grid */
+    margin: 20px auto;
+    width: fit-content; /* Adjust width automatically to content */
+}
+
+
+.price-details {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.price-row, .price-subrow, .total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #555;
+}
+
+.price-value {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.total-row {
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.right-section {
+    width: 500px;
+}
+
+.seat-modal {
+    display: none; /* Hidden by default, shown on click */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.seating-layout {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 3px;
+    margin-bottom: 20px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .seat.selected {
+        background-color: #007bff;
+        color: white;
+    }
+
+.selected-seat-box {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.baggage-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.option-btn {
+    display: flex;
+    background: white;
+    color: #001f3f;
+    border: 1px solid #001f3f;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: pre-wrap;
+}
+
+    .option-btn:hover {
+        background: #001f3f;
+        color: white;
+    }
+
+    .option-btn.selected {
+        background: #001f3f;
+        color: white;
+        border: 1px solid #0056b3;
+    }
+

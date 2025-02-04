@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Assignemnt_Draft_1.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <link href="Master.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <img class="mainlogo" src="../../Images/Travel_Logo.svg" height="50px" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../WebPage/HomePage/HomePage.aspx">Flight</a></li>
+                <li><a href="../../WebPage/DiscoverPage/AboutUsPage.aspx">Discover</a></li>
+                <li><a href="../../WebPage/TrainTicketPage/TrainTicket.aspx">Train</a></li>
+                <li><a href="../../WebPage/FeedbackSelectPage/FeedbackSelectPage.aspx">Feedback</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="../../WebPage/UserBookingPage/UserBookingPage.aspx">Booking</a></li>
+                <li><a href="../../WebPage/UserAccountPage/UserAccountPage.aspx">Account</a></li>
+            </ul>
+        </nav>
+        <div class="nav-animate"></div>
+    </header>
+
+    <div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <footer>
+        <div class="footer-upper">
+            <div class="left-content">
+                <img src="../../Images/Travel_Logo.svg" height="80px" />
+                <h1>TRAVEL FREE
+                </h1>
+            </div>
+            <div class="right-content">
+                <div class="mediasocial">
+                    <a href="https://www.facebook.com/share/1BMp6GzQ85/">
+                        <img id="fb" src="../../Images/social_media_icon/facebook.png" height="45px" />
+                        </a>
+                    <a href="https://www.instagram.com/travelfree_malaysia/profilecard/?igsh=ZWk3cW43aHV3N3Br">
+                        <img src="../../Images/social_media_icon/instagram.png" height="45px" />
+                            </a>
+                    <a href="https://www.linkedin.com/">
+                        <img src="../../Images/social_media_icon/linkedin.png" height="45px" />
+                    </a>
+                    <a href="https://twitter.com/?lang=en">
+                        <img src="../../Images/social_media_icon/twitter.png" height="45px" />
+                    </a>
+                    <a href="https://web.whatsapp.com/">
+                        <img src="../../Images/social_media_icon/whatsapp.png" height="45px"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="footer_lower_container">
+                <div class="footer_lower_row">
+                    <div class="footer_text">
+                        <h4>Shortcut</h4>
+                        <ul>
+                            <li><a href="../../WebPage/HomePage/HomePage.aspx">Book Flight Ticket</a></li>
+                            <li><a href="../../WebPage/TrainTicketPage/TrainTicket.aspx">Book Train Ticket</a></li>
+                            <li><a href="../../WebPage/UserBookingPage/UserBookingPage.aspx">Booking</a></li>
+                            <li><a href="../../WebPage/UserAccountPage/UserAccountPage.aspx">Account Manager</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer_text">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="../../WebPage/DiscoverPage/AboutUsPage.aspx">About Us</a></li>
+                            <li><a href="../../WebPage/UserAccountPage/UserAccountPage.aspx">Account</a></li>
+                           
+                            <li><a href="../../WebPage/FeedbackSelectPage/FeedbackSelectPage.aspx">Feedback</a></li>
+                          
+                        </ul>
+                    </div>
+
+
+                    </div>
+
+            </div>
+        </div>
+        <div class="footer-line"></div>
+        <div class="copyright">Copyright ©2024 All rights reserved || TRAVELFREE</div>
+        <div class="footer-line"></div>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Sticky Header
+            const header = document.querySelector("header");
+            const navAnimate = document.querySelector(".nav-animate");
+            const links = header.querySelectorAll("a");
+
+            window.addEventListener("scroll", () => {
+                const isSticky = window.scrollY > header.offsetHeight;
+                header.classList.toggle("sticking", isSticky);
+            });
+
+            // Nav Hover Animation
+            links.forEach(link => {
+                link.addEventListener("mouseover", event => {
+                    const target = event.target;
+                    navAnimate.style.opacity = "1";
+                    navAnimate.style.top = `${target.offsetTop}px`;
+                    navAnimate.style.left = `${target.offsetLeft}px`;
+                    navAnimate.style.width = `${target.offsetWidth}px`;
+                    navAnimate.style.height = `${target.offsetHeight}px`;
+                });
+                link.addEventListener("mouseleave", () => {
+                    navAnimate.style.opacity = "0";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
