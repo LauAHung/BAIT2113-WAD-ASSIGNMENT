@@ -15,7 +15,7 @@ Password : 855sR6U!n7
 3. ADMIN ACCOUNT (ACCESS TO ADMIN PAGE)
 ------------------
 Email Address : axinzenlhng@gmail.com
-Password : RedmiK30Pro!
+Password : *******
 
 3. SEARCH FLIGHT (RETURN)
 ------------------
